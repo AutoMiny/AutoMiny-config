@@ -1,0 +1,13 @@
+[Unit]
+Description=Autominy service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=ros
+ExecStart=/home/ros/autostart.sh
+
+[Install]
+WantedBy=multi-user.target
+
