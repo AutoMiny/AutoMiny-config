@@ -8,7 +8,7 @@ echo "Waiting for network to come online"
 until nc -vzw 2 $ROS_HOSTNAME 22; do sleep 1; done
 echo "Network online"
 
-modprobe uvcvideo
+sudo modprobe uvcvideo
 
 # clear ROS log
 rm -rf /home/ros/.ros/log
