@@ -1,7 +1,8 @@
 # Lidar Serial
-KERNEL=="ttyUSB*", KERNELS=="ttyUSB*", DRIVERS=="cp210x", SYMLINK+="ttyLidar", MODE="0666"
+KERNEL=="ttyUSB*", KERNELS=="ttyUSB*", DRIVERS=="cp210x", ATTRS{serial}=="0001", SYMLINK+="ttyLidar", MODE="0666"
 
 # Arduino Serial
 KERNEL=="ttyUSB*", KERNELS=="ttyUSB*", DRIVERS=="ftdi_sio", SYMLINK+="ttyArduino", MODE="0666"
 KERNEL=="ttyUSB*", KERNELS=="ttyUSB*", DRIVERS=="ch341-uart", SYMLINK+="ttyArduino", MODE="0666"
 KERNEL=="ttyUSB*", KERNELS=="ttyUSB*", DRIVERS=="pl2303", SYMLINK+="ttyArduino", MODE:="0666"
+KERNEL=="ttyUSB*", KERNELS=="ttyUSB*", DRIVERS=="cp210x", ATTRS{serial}=="0002", SYMLINK+="ttyArduino", MODE="0666"
