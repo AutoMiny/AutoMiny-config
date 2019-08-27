@@ -115,6 +115,8 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+source /home/ros/ros-config.sh
 source /opt/ros/melodic/setup.bash
 source /opt/autominy/catkin_ws/devel/setup.bash
-source /home/ros/ros-config.sh
+
