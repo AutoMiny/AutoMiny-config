@@ -19,9 +19,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 
-echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
-echo "source /opt/ros/melodic/setup.zsh" >> ~/.zshrc
-source ~/.zshrc
 
 sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool build-essential python-catkin-tools
 
@@ -29,8 +26,7 @@ sudo apt install -y python-rosinstall python-rosinstall-generator python-wstool 
 cd /opt/
 sudo git clone https://github.com/autominy/autominy.git
 sudo chown -R ros:ros /opt/autominy
-cd autominy/catkin_ws
-cd src
+cd autominy/catkin_ws/src
 git clone https://github.com/IntelRealSense/realsense-ros.git
 git clone https://github.com/pal-robotics/ddynamic_reconfigure.git
 cd ..
@@ -42,9 +38,6 @@ catkin build
 echo "source /opt/autominy/catkin_ws/devel/setup.bash" >> ~/.bashrc
 echo "source /opt/autominy/catkin_ws/devel/setup.zsh" >> ~/.zshrc
 cd
-
-echo "source /home/ros/ros-config.sh" >> ~/.bashrc
-echo "source /home/ros/ros-config.sh" >> ~/.zshrc
 
 git clone https://github.com/autominy/autominy-config
 cd autominy-config
