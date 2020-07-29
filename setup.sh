@@ -2,6 +2,7 @@ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main
 sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
 sudo apt-get update
 sudo apt-get install -y ros-melodic-desktop-full
+sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
 
 sudo apt-key adv --keyserver keys.gnupg.net --recv-key C8B3A55A6F3EFCDE || sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C8B3A55A6F3EFCDE
 sudo add-apt-repository "deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo bionic main" -u
@@ -33,10 +34,9 @@ cd ..
 #librealsense is not found through packages so add -r to continue on error
 rosdep install --from-paths . --ignore-src --rosdistro=melodic -y -r
 sudo apt install -y clang
+source /opt/ros/melodic/setup.zsh
 catkin config --cmake-args -DCMAKE_C_COMPILER=/usr/bin/clang -DCMAKE_CXX_COMPILER=/usr/bin/clang++
 catkin build
-echo "source /opt/autominy/catkin_ws/devel/setup.bash" >> ~/.bashrc
-echo "source /opt/autominy/catkin_ws/devel/setup.zsh" >> ~/.zshrc
 cd
 
 git clone https://github.com/autominy/autominy-config
@@ -50,6 +50,8 @@ sudo nano /etc/netplan/02-wireless.yaml
 
 cp ros-config.sh ..
 cp autostart.sh ..
+cp .bashrc ..
+cp .zshrc ..
 sudo chmod +x ../autostart.sh
 sudo systemctl enable autominy.service
 
