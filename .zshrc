@@ -8,7 +8,7 @@ export ZSH="/home/ros/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 #zsh_voltage () {
 #  local voltage=$(rostopic echo /sensors/arduino/voltage/value -n1 | head -n1);
