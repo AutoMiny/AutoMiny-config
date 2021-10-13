@@ -108,6 +108,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source /home/ros/ros-config.sh
-source /opt/ros/melodic/setup.zsh
+source /opt/ros/noetic/setup.zsh
 source /opt/autominy/catkin_ws/devel/setup.zsh
 
